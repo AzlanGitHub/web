@@ -1,4 +1,3 @@
-# web
 ## Urheberrecht
 © Azlan Ainto . Alle Rechte vorbehalten.
 Dieser Quellcode und alle zugehörigen Dateien sind urheberrechtlich geschützt. 
