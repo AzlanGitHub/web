@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Flex-Layout für Spaltenanordnung */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #4b0082, #9400d3); /* Regenbogenverlauf */
+    overflow: hidden; /* Verhindert das Scrollen */
+    position: relative; /* Positionierung für überlagerte mathematische Symbole */
+}
+
+/* Container für mathematische Symbole */
+.symbols-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid; /* Verwendung von Grid-Layout */
+    grid-template-columns: repeat(10, 1fr); /* 10 Spalten */
+    grid-auto-rows: 60px; /* Zeilenhöhe */
+    gap: 10px; /* Abstand zwischen den Symbolen */
+    color: rgba(255, 255, 255, 0.3); /* Helle, transparente Farbe für Symbole */
+    text-align: center; /* Textzentrierung */
+    pointer-events: none; /* Verhindert Interaktivität */
+    font-size: 4rem; /* Große Schriftgröße für die Symbole */
+}
+
+/* Taschenrechner-Stil */
+.calculator {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Leichte Transparenz für den Taschenrechner */
+    border: 2px solid #ccc; /* Kanten des Kastens */
+    border-radius: 5px; /* Leichte Abrundung der Ecken */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Schatten für 3D-Effekt */
+    position: relative; /* Damit die Symbole nicht über den Rechner laufen */
+    z-index: 1; /* Taschenrechner über dem Hintergrund */
+}
+
+#display {
+    width: 100%;
+    height: 60px;
+    font-size: 1.5rem;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc; /* Kanten für das Display */
+    border-radius: 5px; /* Leichte Abrundung der Ecken */
+    background-color: #f9f9f9; /* Heller Hintergrund für das Display */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 60px;
+    font-size: 2.4rem; /* Schriftgröße auf das Doppelte erhöht */
+    font-weight: bold; /* Schrift fett */
+    border: 1px solid #bbb; /* Kanten der Buttons */
+    border-radius: 3px; /* Leichte Abrundung der Ecken */
+    background-color: #e0e0e0; /* Standard Hintergrundfarbe */
+    transition: background-color 0.3s ease; /* Weicher Übergang für die Hintergrundfarbe */
+    cursor: pointer;
+}
+
+/* Hover-Effekt für Knöpfe */
+button:hover {
+    background-color: #d0d0d0; /* Dunklere Farbe bei Hover */
+}
+
+/* Nummern-Buttons */
+button:not(.operator):not(.equal):not(.clear) {
+    background-color: #e0e0e0;
+}
+
+button:not(.operator):not(.equal):not(.clear):hover {
+    background-color: #d0d0d0;
+}
+
+/* Grundrechenarten */
+.operator {
+    background-color: #f7b731;
+    color: white;
+}
+
+.operator:hover {
+    background-color: #f5a623;
+}
+
+/* Gleichheits-Button */
+.equal {
+    background-color: #3bb273;
+    color: white;
+    grid-column: span 3; /* Dehnt den Button über zwei Spalten aus */
+}
+
+.equal:hover {
+    background-color: #34a061;
+}
+
+/* Clear-Button */
+.clear {
+    background-color: #eb5757;
+    color: white;
+}
+
+.clear:hover {
+    background-color: #d63f3f;
+}
+
+/* Anpassungen für Tablets */
+@media (max-width: 768px) {
+    .calculator {
+        max-width: 90%;
+    }
+
+    #display {
+        height: 50px;
+        font-size: 1.3rem;
+    }
+
+    button {
+        height: 50px;
+        font-size: 1.6rem; /* Angepasste Schriftgröße für kleinere Bildschirme */
+    }
+}
+
+/* Anpassungen für Smartphones */
+@media (max-width: 480px) {
+    .calculator {
+        padding: 10px;
+    }
+
+    #display {
+        height: 45px;
+        font-size: 1.1rem;
+        padding: 8px;
+    }
+
+    button {
+        height: 45px;
+        font-size: 1.4rem; /* Angepasste Schriftgröße für kleinere Bildschirme */
+    }
+}
