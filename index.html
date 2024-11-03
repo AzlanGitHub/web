@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Taschenrechner</title>
+    <link rel="stylesheet" href="styles.css">
+    
+
+</head>
+<body>
+    <div class="symbols-container">
+        <!-- Mathematische Symbole -->
+        <div>1</div><div>2</div><div>3</div><div>+</div><div>-</div><div>*</div><div>/</div><div>0</div><div>4</div><div>5</div>
+        <div>6</div><div>√</div><div>^</div><div>7</div><div>8</div><div>9</div><div>=</div><div>∑</div><div>∏</div><div>∞</div>
+        <div>≈</div><div>π</div><div>√</div><div>|</div><div>±</div><div>∠</div><div>⊕</div><div>⊗</div><div>∇</div>
+        <div>∫</div><div>∂</div><div>∆</div><div>δ</div><div>⊥</div><div>∇</div><div>⌈</div><div>⌉</div><div>⌊</div><div>⌋</div>
+        <div>∅</div><div>ℕ</div><div>ℤ</div><div>ℚ</div><div>ℝ</div><div>ℂ</div>
+        <!-- Füge weitere Symbole hinzu, um mehr Zeilen zu erstellen -->
+    </div>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('*')">*</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+            <button class="operator" onclick="deleteLastCharacter()">del</button>
+
+            <button class="equal" onclick="calculateResult()">=</button>
+          
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    </body></html>
