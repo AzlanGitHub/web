@@ -73,6 +73,7 @@ button {
     background-color: #e0e0e0; /* Standard Hintergrundfarbe */
     transition: background-color 0.3s ease; /* Weicher Übergang für die Hintergrundfarbe */
     cursor: pointer;
+    cursor: none;
 }
 
 /* Hover-Effekt für Knöpfe */
